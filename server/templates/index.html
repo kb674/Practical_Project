@@ -1,0 +1,45 @@
+<html>
+    <header>
+        <title>
+            Fighter Generator
+        </title>
+    </header>
+    <body>
+        <h1>
+            Fighter Generator
+        </h1>
+        <h2>
+            Current Profile
+        </h2>
+        
+            &ensp; <b>Name:</b> &emsp; &emsp; &nbsp; {{ latest_profile.name }}
+            <br>
+        
+            &ensp; <b>Martial Art:</b> &nbsp; {{ latest_profile.art }}
+            <br>
+
+            &ensp; <b>Record:</b> &emsp; &emsp; {{ latest_profile.record }} 
+            <br>
+            <br>
+            <br>
+            
+        <h2>
+            All Profiles
+        </h2>
+        
+        {% for each_profile in all_profiles %}
+            &ensp; <b>Name:</b> &emsp; &emsp; &nbsp; {{ each_profile.name }}
+            <br>
+        
+            &ensp; <b>Martial Art:</b> &nbsp; {{ each_profile.art }}
+            <br>
+
+            &ensp; <b>Record:</b> &emsp; &emsp; {{ each_profile.record }} 
+            <br>
+            <br>
+            <br>
+
+        {% endfor %}
+    </body>
+
+</html>

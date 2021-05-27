@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+    mysql:
+        image: mysql:5.7
+        container_name: mysql
+        environment:
+            MYSQL_DATABASE: fighters_db
+            MYSQL_ROOT_PASSWORD: password
+    server:
+        build: ./server
+        container_name: server
+        ports:
+            - target: 5000
+              published: 5000
+              protocol: tcp
+        environment:
+            DATABASE_URI: mysql+pymysql://root:password@mysql/fighters_db
+    service_two_api:
+        build: ./service_two_api
+        container_name: service_two_api
+    service_three_api:
+        build: ./service_three_api
+        container_name: service_three_api
+    service_four_api:
+        build: ./service_four_api
+        container_name: service_four_api
