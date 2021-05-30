@@ -3,24 +3,34 @@ services:
     mysql:
         image: mysql:5.7
         container_name: mysql
+        deploy:
+            replicas: 2
         environment:
             MYSQL_DATABASE: fighters_db
             MYSQL_ROOT_PASSWORD: password
     server:
-        image: fighter_server_image:1.0
+        image: kb674/fighter_server_image:1.0
         container_name: server
         ports:
             - target: 5000
               published: 5000
               protocol: tcp
+        deploy: 
+            replicas: 2
         environment:
             DATABASE_URI: mysql+pymysql://root:password@mysql/fighters_db
     two_api:
-        image: fighter_two_image:1.0
+        image: kb674/fighter_two_image:1.0
         container_name: service_two_api
+        deploy: 
+            replicas: 2
     three_api:
-        image: fighter_three_image:1.0
+        image: kb674/fighter_three_image:1.0
         container_name: service_three_api
+        deploy: 
+            replicas: 2
     four_api:
-        image: fighter_four_image:1.0
+        image: kb674/fighter_four_image:1.0
         container_name: service_four_api
+        deploy: 
+            replicas: 2
