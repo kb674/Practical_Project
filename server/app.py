@@ -4,9 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 from os import getenv
 
 app = Flask(__name__)
-db = SQLAlchemy(app)
-
 app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URI')
+db = SQLAlchemy(app)
 
 class Fighters(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -19,18 +18,15 @@ def home():
     fighter_name = requests.get('http://service_two_api:5000/get_name')
     martial_art = requests.get('http://service_three_api:5000/get_martial_art')
     record = requests.post('http://service_four_api:5000/get_record', data=(fighter_name.text + martial_art.text))
-
-    table_entry = Fighters(name=fighter_name.text, art=martial_art.text, record=record.text)
-    db.session.add(table_entry)
-    db.session.commit()
     
-
-    all_profiles = Fighters.query.all()
+    all_profiles = Fighters.query.order_by(Fighters.id.desc()).limit(5)
     latest_profile = Fighters.query.order_by(Fighters.id.desc()).first()
-    output = ""
+
+    db.session.add(Fighters(name=fighter_name.text, art=martial_art.text, record=record.text))
+    db.session.commit()
+
     return render_template('index.html', title='Home', all_profiles=all_profiles, latest_profile=latest_profile)
     
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
