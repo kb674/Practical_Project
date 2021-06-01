@@ -1,11 +1,9 @@
 - hosts: managers
-  gather_facts: no
   become: true
   roles:
   - deploy-stack
 
 - hosts: proxy
-  gather_facts: no
   become: true
   roles:
   - setup-nginx
