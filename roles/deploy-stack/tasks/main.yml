@@ -1,0 +1,11 @@
+---
+- name: "install jsondiff"
+  pip:
+    name: jsondiff
+
+- name: Deploy stack from a compose file
+  docker_stack:
+    state: present
+    name: service
+    compose:
+      - /home/kusha/docker-compose.yaml

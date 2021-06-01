@@ -1,0 +1,9 @@
+- hosts: managers
+  become: true
+  roles:
+  - deploy-stack
+
+- hosts: proxy
+  become: true
+  roles:
+  - setup-nginx
