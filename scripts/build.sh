@@ -2,6 +2,9 @@
 
 echo "build script run"
 
+# build CUSTOM_DB image -  kb674/fighter_db_image:latest
+docker build -t kb674/fighter_db_image:latest db
+
 # build SERVER image -  kb674/fighter_server_image:latest
 docker build -t kb674/fighter_server_image:latest server
 
