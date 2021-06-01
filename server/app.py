@@ -20,7 +20,7 @@ def home():
     record = requests.post('http://service_four_api:5000/get_record', data=(fighter_name.text + martial_art.text))
     
     latest_profile = Fighters.query.order_by(Fighters.id.desc()).first()
-    all_profiles = Fighters.query.all().limit(5)
+    all_profiles = Fighters.query.all()
 
     db.session.add(Fighters(name=fighter_name.text, art=martial_art.text, record=record.text))
     db.session.commit()
