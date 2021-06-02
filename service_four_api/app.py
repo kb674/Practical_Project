@@ -6,8 +6,8 @@ app = Flask(__name__)
 
 @app.route('/get_record', methods=['POST'])
 def get_record():
-    record = str(len(request.data.decode('utf-8')))
-    finish_type = ['Submission', 'Decision', 'Triangle Choke', 'Omaplata', 'Gogoplata', 'Eye Poke']
+    record = str(len(request.data.decode('utf-8'))) 
+    finish_type = ['Submission', 'Decision', 'Triangle-Choke', 'Omaplata', 'Gogoplata', 'Eye-Poke']
     finish_type_two = ['KO', 'TKO', 'Drowsiness', 'Fluke']
     return f"{record} wins by {random.choice(finish_type)}"
     

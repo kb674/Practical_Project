@@ -27,3 +27,4 @@ class TestHome(TestBase):
             self.assertEqual(response.status_code, 200)
             self.assertIn(b'name', response.data)
             self.assertIn(b'Judo', response.data)
+            self.assertIn(b'45 wins by Submission', response.data)
