@@ -3,4 +3,4 @@
 echo "deploy script run"
 
 # run ansible playbook
-ansible-playbook -i inventory.yaml playbook.yaml
+echo "ansible-playbook -i inventory.yaml playbook.yaml"
