@@ -15,22 +15,22 @@ pip3 install flask-testing
 
 # test server
 cd server/
-python3 -m pytest 
+python3 -m pytest --cov=tests/
 cd ..
 
 # test ervice_two_api
 cd service_two_api
-python3 -m pytest 
+python3 -m pytest --cov=tests/
 cd ..
 
 # test service_three_api
-sd service_three_api
-python3 -m pytest
+cd service_three_api
+python3 -m pytest --cov=tests/
 cd ..
 
 # test service_four_api
-sd service_four_api
-python3 -m pytest
+cd service_four_api
+python3 -m pytest --cov=tests/
 cd ..
 
 
