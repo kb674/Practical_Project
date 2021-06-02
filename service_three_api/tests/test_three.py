@@ -11,3 +11,4 @@ class TestHome(TestBase):
     def test_get_martial_art(self):
         response = self.client.get(url_for('get_martial_art'))
         self.assertEqual(response.status_code, 200)
+        self.assertIn(response.data.decode('utf-8'),['Wrestling', 'BJJ', 'Judo', 'Submission Grappling', 'Boxing', 'Kickboxing', 'Muay Thai', 'MMA'])
