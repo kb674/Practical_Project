@@ -9,7 +9,7 @@ pipeline {
                 sh "./scripts/test.sh"
             }
         }
-        post('test reports') {
+        stage('test reports') {
             steps {
                 sh "./scripts/test.sh"
             }
