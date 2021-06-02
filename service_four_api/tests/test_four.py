@@ -8,6 +8,6 @@ class TestBase(TestCase):
         return app
 
 class TestHome(TestBase):
-    def test_get_martial_art(self):
-        response = self.client.get(url_for('get_martial_art'))
+    def test_get_record(self):
+        response = self.client.post(url_for('get_record'))
         self.assertEqual(response.status_code, 200)

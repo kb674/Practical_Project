@@ -12,8 +12,3 @@ class TestHome(TestBase):
         response = self.client.get(url_for('get_name'))
         self.assertEqual(response.status_code, 200)
 
-        with patch ('random.choice') as r:
-            r.return_value = 'Shoshana'
-        
-        response.data = r.return_value
-        self.assertIn(b'Shoshana', response.data)
