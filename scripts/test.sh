@@ -6,6 +6,12 @@ echo "Test script run"
 python3 -m venv env
 source env/bin/activate
 
+# install dependencies
+pip3 install pytest
+pip3 install requests-mock
+pip3 install flask
+pip3 install flask-sqlalchemy
+
 # test server
 cd server/
 python3 -m pytest 
