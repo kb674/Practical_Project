@@ -15,7 +15,7 @@ pip3 install flask-testing
 
 # test server
 cd server/
-python3 -m pytest 
+python3 -m pytest --doctest-modules --junitxml=junit/test-results.xml --cov=application --cov-report=xml --cov-report=html
 cd ..
 
 # test ervice_two_api
