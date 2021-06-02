@@ -4,7 +4,7 @@ services:
         image: kb674/fighter_db_image:latest
         container_name: mysql
         deploy:
-            replicas: 2
+            replicas: 1
         environment:
             MYSQL_DATABASE: fighters_db
             MYSQL_ROOT_PASSWORD: password
