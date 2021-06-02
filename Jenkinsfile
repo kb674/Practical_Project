@@ -9,9 +9,14 @@ pipeline {
                 sh "./scripts/test.sh"
             }
         }
+        post('test reports') {
+            steps {
+                sh "./scripts/test.sh"
+            }
+        }
         stage('build images') {
             steps {
-                sh "./scripts/build.sh"
+                junit 'test-results.xml'
             }
         }
         stage('push images') {
