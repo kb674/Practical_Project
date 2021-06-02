@@ -15,7 +15,7 @@ pip3 install flask-testing
 
 # test server
 cd server/
-python3 -m pytest 
+python3 -m pytest --cov .
 cd ..
 
 # test ervice_two_api
