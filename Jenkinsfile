@@ -11,12 +11,12 @@ pipeline {
         }
         stage('test reports') {
             steps {
-                sh "./scripts/test.sh"
+                junit 'test-results.xml'
             }
         }
         stage('build images') {
             steps {
-                junit 'test-results.xml'
+                sh "./scripts/build.sh"
             }
         }
         stage('push images') {
