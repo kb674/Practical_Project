@@ -9,11 +9,6 @@ pipeline {
                 sh "./scripts/test.sh"
             }
         }
-        stage('test reports') {
-            steps {
-                junit 'test-results.xml'
-            }
-        }
         stage('build images') {
             steps {
                 sh "./scripts/build.sh"
