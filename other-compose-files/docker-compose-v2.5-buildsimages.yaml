@@ -1,13 +1,13 @@
 version: "3.8"
 services:
     mysql:
-        image: kb674/fighter_db_image:latest
+        build: ./db
         container_name: mysql
         environment:
             MYSQL_DATABASE: fighters_db
             MYSQL_ROOT_PASSWORD: password
     server:
-        image: kb674/fighter_server_image:latest
+        build: ./server
         container_name: server
         ports:
             - target: 5000
@@ -16,11 +16,11 @@ services:
         environment:
             DATABASE_URI: mysql+pymysql://root:password@mysql/fighters_db
     service_two_api:
-        image: kb674/fighter_two_image:latest
+        build: ./service_two_api
         container_name: service_two_api
     service_three_api:
-        image: kb674/fighter_three_image:latest
+        build: ./service_three_api
         container_name: service_three_api
     service_four_api:
-        image: kb674/fighter_four_image:latest
+        build: ./service_four_api
         container_name: service_four_api

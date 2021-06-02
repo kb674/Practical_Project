@@ -10,7 +10,7 @@ class TestBase(TestCase):
         app.config.update(SQLALCHEMY_DATABASE_URI="sqlite:///test.db")
         return app
     
-    def Set_up(self):
+    def setUp(self):
         db.create_all()
     
     def tearDown(self):
