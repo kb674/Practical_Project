@@ -19,6 +19,11 @@ pipeline {
                 sh "./scripts/push.sh"
             }
         }
+        stage('configure') {
+            steps {
+                sh "./scripts/configure.sh"
+            }
+        }
         stage('deploy') {
             steps {
                 sh "./scripts/deploy.sh"
