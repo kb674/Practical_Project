@@ -27,6 +27,7 @@ pipeline {
         stage('deploy') {
             steps {
                 sh "./scripts/deploy.sh"
+                sh "scp docker-compose.yaml kusha@project-swarm-manager"
             }
         }
     }
