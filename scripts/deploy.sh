@@ -5,6 +5,9 @@ echo "deploy script run"
 # Send docker-compose file to sawrm manager
 scp docker-compose.yaml jenkins@project-swarm-manager:/home/jenkins/
 
+# Send nginx.conf to project-nginx
+scp nginx.conf jenkins@project-nginx:/home/jenkins/
+
 # change to jenkins directory run the deploy command
 ssh jenkins@project-swarm-manager << EOF 
 cd /home/jenkins
