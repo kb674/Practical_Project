@@ -1,9 +1,6 @@
-- hosts: managers
+- hosts: managers, workers
   become: true
   roles:
-  - deploy-stack
+  - install-docker
 
-- hosts: proxy
-  become: true
-  roles:
-  - setup-nginx
+
