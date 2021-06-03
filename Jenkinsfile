@@ -27,7 +27,7 @@ pipeline {
         stage('deploy') {
             steps {
                 sh "./scripts/deploy.sh"
-                sh "scp docker-compose.yaml jenkins@project-swarm-manager/home/jenkins"
+                sh "scp docker-compose.yaml jenkins@project-swarm-manager:/home/jenkins/"
                 sh "ssh jenkins@project-swarm-manager << EOF docker stack deploy --compose-file docker-compose.yaml service EOF"
             }
         }
