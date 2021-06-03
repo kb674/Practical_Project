@@ -2,7 +2,6 @@ pipeline {
     agent any
     environment {
         DOCKERHUB_DETAILS = credentials("DOCKERHUB_DETAILS")
-        SWARM_MANAGER = credentials("SWARM_MANAGER")
     }
     stages {
         stage('test') {
@@ -29,7 +28,7 @@ pipeline {
             steps {
                 sh "./scripts/deploy.sh"
                 sh "scp docker-compose.yaml kusha@project-swarm-manager"
-                sh "ssh $SWARM_MANAGER << EOF docker-stack deploy --compose-file docker-compose.yaml service EOF"
+                sh "ssh kusha@project-swarm-manager << EOF docker-stack deploy --compose-file docker-compose.yaml service EOF"
             }
         }
     }
