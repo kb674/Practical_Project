@@ -2,6 +2,6 @@
 - name: "add worker to swarm"
   docker_swarm:
     state: join
-    advertise_addr: worker_ip
-    join_token: "{{ hostvars['manager_ip']['swarm_info']['swarm_facts']['JoinTokens']['Worker'] }}"
-    remote_addrs: [ 'manager_ip:2377' ]
+    advertise_addr: jenkins@project-swarm-worker
+    join_token: "{{ hostvars['jenkins@project-swarm-manager']['swarm_info']['swarm_facts']['JoinTokens']['Worker'] }}"
+    remote_addrs: [ 'jenkins@project-swarm-manager:2377' ]
