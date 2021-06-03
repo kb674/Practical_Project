@@ -6,7 +6,7 @@ echo "deploy script run"
 scp docker-compose.yaml project-swarm-manager
 
 # ssh heredoc command
-ssh project-swarm-manager << EOF
+ssh kusha@project-swarm-manager << EOF
 docker stack deploy --compose-file docker-compose.yaml service
 EOF
 
