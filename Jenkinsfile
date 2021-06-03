@@ -28,6 +28,7 @@ pipeline {
             steps {
                 sh "./scripts/deploy.sh"
                 sh "scp docker-compose.yaml kusha@project-swarm-manager"
+                sh "ssh kusha@swarm-manager-node << EOF docker-stack deploy --compose-file docker-compose.yaml service EOF"
             }
         }
     }
