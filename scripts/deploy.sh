@@ -15,8 +15,10 @@ EOF
 scp nginx.conf jenkins@project-nginx:/home/jenkins/
 
 # run nginx container
+#docker run -d -p 80:80 --name nginx --mount type=bind,source=/home/jenkins/nginx.conf,target=/etc/nginx/nginx.conf nginx:alpine
+# start the container
 ssh jenkins@project-nginx << EOF
 cd /home/jenkins
-docker run -d -p 80:80 --name nginx --mount type=bind,source=/home/jenkins/nginx.conf,target=/etc/nginx/nginx.conf nginx:alpine
+docker start nginx
 EOF
 
