@@ -11,7 +11,7 @@
 - hosts: workers
   become: true
   roles:
- - swarm-worker
+  - swarm-worker
   
 
 
