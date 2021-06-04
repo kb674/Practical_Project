@@ -17,10 +17,8 @@ services:
               protocol: tcp
         deploy: 
             replicas: 2
-        env_file:
-            - .env
         environment:
-            DATABASE_URI: ${DATABASE_URI}
+            DATABASE_URI: mysql+pymysql://root:password@mysql/fighters_db
     two_api:
         image: kb674/fighter_two_image:latest
         container_name: service_two_api
