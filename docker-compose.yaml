@@ -18,7 +18,7 @@ services:
         deploy: 
             replicas: 2
         environment:
-            DATABASE_URI_FILE: /run/secrets/secret_db_uri
+            DATABASE_URI: /run/secrets/secret_db_uri
         secrets:
             - secret_db_uri
     two_api:
