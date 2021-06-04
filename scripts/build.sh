@@ -1,6 +1,8 @@
 #!/bin/bash
 
 echo "build script run"
+# install docker 
+sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 # build CUSTOM_DB image -  kb674/fighter_db_image:latest
 docker build -t kb674/fighter_db_image:latest db
