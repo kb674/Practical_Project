@@ -32,5 +32,8 @@ pipeline {
                 sh "./scripts/deploy.sh"
             }
         }
+        stage("slack") {
+            slackSend color: '#BADA55', message: 'Hello, World!'
+        }
     }
 }
