@@ -1,6 +1,10 @@
 #!/bin/bash
 
 echo "Test script run"
+# install python3, venv and pip
+sudo apt-get python3
+sudo apt-get python3-venv
+sudo apt-get python3-pip
 
 # create and activate venv
 python3 -m venv env
