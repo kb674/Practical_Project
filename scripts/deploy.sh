@@ -8,6 +8,9 @@ scp docker-compose.yaml jenkins@project-swarm-manager:/home/jenkins/
 # change to jenkins directory run the deploy command
 ssh jenkins@project-swarm-manager << EOF 
 cd /home/jenkins
+export MYSQL_DATABASE=${MYSQL_DATABASE}
+export MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+export DATABASE_URI=${DATABASE_URI}
 docker stack deploy --compose-file docker-compose.yaml service 
 EOF
 
