@@ -6,7 +6,7 @@ services:
         deploy:
             replicas: 1
         environment:
-            MYSQL_DATABASE: fighters_db
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
             MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     server:
         image: kb674/fighter_server_image:latest
