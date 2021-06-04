@@ -17,6 +17,8 @@ services:
               protocol: tcp
         deploy: 
             replicas: 2
+        env_file:
+            - .env
         environment:
             DATABASE_URI: ${DATABASE_URI}
     two_api:
