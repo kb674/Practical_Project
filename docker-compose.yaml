@@ -18,9 +18,7 @@ services:
         deploy: 
             replicas: 2
         environment:
-            DATABASE_URI: /run/secrets/secret_db_uri
-        secrets:
-            - secret_db_uri
+            DATABASE_URI: mysql+pymysql://root:password@mysql/fighters_db
     two_api:
         image: kb674/fighter_two_image:latest
         container_name: service_two_api
@@ -36,7 +34,3 @@ services:
         container_name: service_four_api
         deploy: 
             replicas: 2
-
-secrets:
-    secret_db_uri:
-        external: true 
