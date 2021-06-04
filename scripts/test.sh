@@ -20,21 +20,21 @@ pip3 install flask-testing
 
 # test server
 cd server/
-python3 -m pytest --junitxml=junit/test-results.xml --cov=tests/ --cov-report=xml
+python3 -m pytest --junitxml=junit/test-results.xml --cov=tests/ 
 cd ..
 
 # test ervice_two_api
-cd service_two_api
+cd service_two_api --junitxml=junit/test-results.xml --cov=tests/ 
 python3 -m pytest 
 cd ..
 
 # test service_three_api
-cd service_three_api
+cd service_three_api --junitxml=junit/test-results.xml --cov=tests/ 
 python3 -m pytest 
 cd ..
 
 # test service_four_api
-cd service_four_api
+cd service_four_api --junitxml=junit/test-results.xml --cov=tests/ 
 python3 -m pytest 
 cd ..
 
