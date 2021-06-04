@@ -12,7 +12,6 @@ source env/bin/activate
 
 # install dependencies
 pip3 install pytest
-pip3 install pytest-cov
 pip3 install requests-mock
 pip3 install flask
 pip3 install flask-sqlalchemy
@@ -20,21 +19,21 @@ pip3 install flask-testing
 
 # test server
 cd server/
-python3 -m pytest --junitxml=junit/test-results.xml --cov=tests/ 
+python3 -m pytest 
 cd ..
 
 # test ervice_two_api
-cd service_two_api --junitxml=junit/test-results.xml --cov=tests/ 
+cd service_two_api
 python3 -m pytest 
 cd ..
 
 # test service_three_api
-cd service_three_api --junitxml=junit/test-results.xml --cov=tests/ 
+cd service_three_api
 python3 -m pytest 
 cd ..
 
 # test service_four_api
-cd service_four_api --junitxml=junit/test-results.xml --cov=tests/ 
+cd service_four_api
 python3 -m pytest 
 cd ..
 
