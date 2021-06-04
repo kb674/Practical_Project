@@ -33,7 +33,9 @@ pipeline {
             }
         }
         stage("slack") {
-            slackSend color: '#BADA55', message: 'Hello, World!'
+            steps {
+                slackSend color: '#BADA55', message: 'Hello, World!'     
+            }
         }
     }
 }
