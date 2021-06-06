@@ -8,7 +8,7 @@ app = Flask(__name__)
 def get_martial_art():
     grappling = ['Wrestling', 'BJJ', 'Judo', 'Submission Grappling']
     striking = ['Boxing', 'Kickboxing', 'Muay Thai', 'MMA']
-    return random.choice(grappling)
+    return random.choice(striking)
     
 
 if __name__ == "__main__":
