@@ -9,7 +9,7 @@ def get_record():
     record = str(len(request.data.decode('utf-8'))) 
     finish_type = ['Submission', 'Decision', 'Triangle-Choke', 'Omaplata', 'Gogoplata', 'Eye-Poke']
     finish_type_two = ['KO', 'TKO', 'Drowsiness', 'Fluke']
-    return f"{record} wins by {random.choice(finish_type)}"
+    return f"{record} wins by {random.choice(finish_type_two)} with {record}0 questionable losses by DQ"
     
 
 if __name__ == "__main__":
