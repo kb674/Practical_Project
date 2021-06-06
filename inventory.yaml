@@ -6,5 +6,8 @@ all:
     workers:
       hosts:
         jenkins@project-swarm-worker
+    proxy:
+      hosts:
+        jenkins@project-nginx
   
     

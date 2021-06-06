@@ -32,5 +32,10 @@ pipeline {
                 sh "./scripts/deploy.sh"
             }
         }
+        stage("slack") {
+            steps {
+                slackSend color: '#BADA55', message: 'The build was a success!'     
+            }
+        }
     }
 }

@@ -1,4 +1,4 @@
-- hosts: managers, workers
+- hosts: managers, workers, proxy
   become: true
   roles:
   - install-docker
