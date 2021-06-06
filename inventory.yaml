@@ -1,0 +1,13 @@
+all:
+  children:
+    managers:
+      hosts:
+        jenkins@project-swarm-manager
+    workers:
+      hosts:
+        jenkins@project-swarm-worker
+    proxy:
+      hosts:
+        jenkins@project-nginx
+  
+    

@@ -1,0 +1,42 @@
+---
+- name: "install dependencies"  
+  apt:
+    pkg:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - gnupg
+    - lsb-release
+
+- name: "get docker apt key"
+  ansible.builtin.apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: "add docker apt repository"
+  ansible.builtin.apt_repository:
+    repo: "deb https://download.docker.com/linux/ubuntu bionic stable"
+    state: present
+  
+- name: "install docker enginer"
+  apt:
+    pkg:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+
+- name: "add user to docker group"
+  ansible.builtin.user:
+    name: jenkins
+    groups: admin, docker
+    append: yes
+
+- name: "install docker with pip"
+  pip:
+    name: docker
+    executable: pip3
+ 
+- name: "stop and start ssh"
+  service:
+    name: ssh
+    state: restarted

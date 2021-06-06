@@ -1,0 +1,8 @@
+---
+- name: "initialise a new swarm"
+  docker_swarm:
+    state: present
+
+- name: "show swarm info"
+  docker_swarm_info:
+  register: swarm_info
