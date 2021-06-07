@@ -10,7 +10,7 @@ def get_name():
     last_name = ['Coombs', 'Gallows', 'Franzoni', 'Hoeppner', 'Costello', 'Scotti', 'Mellor', 'Lowenstein', 'Merino', 'Portier']
     nick_name = ["The Beast", "The Dentist", "Beauty and the Beast", "Angel of Death", "Sugar Free", "Ice Cold", "Shogun", "The Thunder", "The Dreamcatcher", "War Machine", "Was a Bullfrog", "Sick Dog", "Cheesesteak", "Cabbage", "Stinkyfeet", "The Word", "Gouda Gouda"]
     nick_name_two = ['Napao', 'Lula Molusco', 'Toquinho', 'Jacare', 'Sapo']
-    fighter_name = f"{random.choice(first_name)} '{random.choice(nick_name_two)}' {random.choice(last_name)}"
+    fighter_name = f"{random.choice(first_name)} '{random.choice(nick_name)}' {random.choice(last_name)}"
     return fighter_name
 
 
